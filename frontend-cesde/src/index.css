@@ -1,0 +1,320 @@
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #171717;
+  background-color: #ffffff;
+
+  --cesde-primary: #e62578;
+  --cesde-primary-hover: #c91c65;
+  --cesde-dark: #171717;
+  --cesde-gray: #6c757d;
+  --cesde-light: #fff5f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-cesde {
+  background-color: var(--cesde-primary);
+  border-color: var(--cesde-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-cesde:hover {
+  background-color: var(--cesde-primary-hover);
+  border-color: var(--cesde-primary-hover);
+  color: #ffffff;
+}
+
+.text-cesde {
+  color: var(--cesde-primary);
+}
+
+
+/* Estructura general */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f7f9;
+}
+
+.cesde-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: #20202a;
+  color: #ffffff;
+}
+
+.cesde-logo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  border-bottom: 1px solid #3b3b45;
+}
+
+.cesde-logo span {
+  color: #e62578;
+}
+
+.cesde-logo p {
+  color: #b7b7c2;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.sidebar-label {
+  color: #9999a7;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 12px 10px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: #d6d6df;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: #343440;
+  color: #ffffff;
+}
+
+.sidebar-link.active {
+  background: #e62578;
+  color: #ffffff;
+}
+
+.logout-button {
+  background: transparent;
+  border: 0;
+}
+
+/* Contenido principal */
+
+.dashboard-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeF2;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff0f6;
+  color: #e62578;
+  font-size: 21px;
+}
+
+.dashboard-content {
+  padding: 30px 32px;
+}
+
+.welcome-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 14px;
+  background: #20202a;
+  color: #ffffff;
+}
+
+.welcome-panel p {
+  color: #d1d1d8;
+  max-width: 600px;
+}
+
+.welcome-tag {
+  color: #ff83b5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.welcome-icon {
+  color: #e62578;
+  font-size: 58px;
+  padding: 10px;
+}
+
+/* Tarjetas de indicadores */
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #eeeeF2;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 3%);
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  font-size: 21px;
+}
+
+.stat-icon.pink {
+  background: #fff0f6;
+  color: #e62578;
+}
+
+.stat-icon.blue {
+  background: #eaf3ff;
+  color: #3277d5;
+}
+
+.stat-icon.orange {
+  background: #fff3e6;
+  color: #d98222;
+}
+
+.stat-icon.green {
+  background: #e6f7ef;
+  color: #209766;
+}
+
+/* Acceso al módulo */
+
+.module-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #eeeeF2;
+  border-radius: 12px;
+}
+
+.module-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #fff0f6;
+  color: #e62578;
+  font-size: 22px;
+}
+
+.module-panel p {
+  max-width: 650px;
+}
+
+/* Adaptación a dispositivos pequeños */
+
+@media (max-width: 767px) {
+  .cesde-sidebar {
+    width: 76px;
+  }
+
+  .cesde-logo {
+    padding: 18px 6px !important;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .cesde-logo p,
+  .sidebar-label {
+    display: none;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+    padding: 14px 4px;
+    font-size: 0;
+  }
+
+  .sidebar-link i {
+    margin: 0 !important;
+    font-size: 19px;
+  }
+
+  .dashboard-topbar {
+    padding: 18px 14px;
+  }
+
+  .dashboard-content {
+    padding: 20px 14px;
+  }
+
+  .welcome-panel {
+    padding: 22px;
+  }
+
+  .welcome-icon {
+    display: none;
+  }
+
+  .module-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+.quick-access-card {
+  min-height: 90px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #eeeeF2;
+  border-radius: 12px;
+  color: #20202a;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-access-card:hover {
+  color: #20202a;
+  border-color: #e62578;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 5%);
+}
+
+.quick-access-card .stat-icon {
+  flex-shrink: 0;
+}
